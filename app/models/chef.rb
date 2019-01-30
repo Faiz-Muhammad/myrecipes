@@ -5,4 +5,6 @@ class Chef < ApplicationRecord
   validates_presence_of :email, length: { maximum: 255},
                         format: { with: VALID_EMAIL_REGEX },
                         uniqueness: {case_sensitive: false}
+  has_many :recipes                       
+
 end
