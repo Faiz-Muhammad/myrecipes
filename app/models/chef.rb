@@ -7,4 +7,5 @@ class Chef < ApplicationRecord
   validates :password, presence: true, length: { minimum: 5 }, allow_nil: true
   has_many :recipes, dependent: :destroy
   default_scope -> {order(updated_at: :desc)} #latest chef created will be on top
+  has_many :comments, dependent: :destroy
 end
