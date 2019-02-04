@@ -4,4 +4,6 @@ class Recipe < ApplicationRecord
   belongs_to :chef
   validates_presence_of :chef_id
   default_scope -> {order(updated_at: :desc)} #latest recipe created will be on top
+  has_many :recipe_ingredients
+  has_many :ingredients, through: :recipe_ingredients
 end
